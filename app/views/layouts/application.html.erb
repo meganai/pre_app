@@ -70,7 +70,17 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
+
         <div class="span9">
+
+          <!-- devise -->
+          <% if user_signed_in? %>
+            <!-- あとでfullnameメソッドかなんかつくるよ -->
+            ようこそ<%= current_user.l_name %><%= current_user.f_name %>さん
+            <%= link_to "LogOut", destroy_user_session_path, :method => :delete %>
+          <% end %>
+          <!-- devise -->
+
           <%= bootstrap_flash %>
           <%= yield %>
         </div>

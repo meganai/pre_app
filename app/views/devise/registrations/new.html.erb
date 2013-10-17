@@ -9,11 +9,15 @@
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
-
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
+
+<!-- 海外対応しないと思うので直打ちでおｋ -->
+  <div><%= f.label :l_name %><br />
+  <%= f.text_field :l_name %></div>
+
+  <div><%= f.label :f_name %><br />
+  <%= f.text_field :f_name %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

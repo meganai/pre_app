@@ -1,4 +1,13 @@
 PreApp::Application.routes.draw do
+  resources :responses
+
+
+  resources :articles
+
+
+  resources :bbs
+
+
   devise_for :users
 
   resources :qualifications

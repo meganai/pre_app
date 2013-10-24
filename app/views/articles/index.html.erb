@@ -1,0 +1,20 @@
+<h1>Article</h1>
+
+<table class="table table-hover">
+    <% @articles.each do |article| %>
+      <tr>
+        <td>No.<%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= article.created_at %></td>
+        <td><%= article.user.l_name %></td>
+        <td><%= article.qualification_id %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), :class => 'icon-pencil' %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'icon-remove' %></td>
+      </tr>
+    <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>

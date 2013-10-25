@@ -7,6 +7,7 @@ PreApp::Application.routes.draw do
 
   resources :bbs
 
+  resources :dashboards
 
   devise_for :users
 

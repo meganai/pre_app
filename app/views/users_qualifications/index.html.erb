@@ -1,0 +1,27 @@
+<h1>Listing users_qualifications</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Qualification</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users_qualifications.each do |users_qualification| %>
+  <tr>
+    <td><%= users_qualification.user_id %></td>
+    <td><%= users_qualification.qualification_id %></td>
+    <td><%= users_qualification.score %></td>
+    <td><%= link_to 'Show', users_qualification %></td>
+    <td><%= link_to 'Edit', edit_users_qualification_path(users_qualification) %></td>
+    <td><%= link_to 'Destroy', users_qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Users qualification', new_users_qualification_path %>

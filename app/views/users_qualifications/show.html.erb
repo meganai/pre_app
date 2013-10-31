@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @users_qualification.user_id %>
+</p>
+
+<p>
+  <b>Qualification:</b>
+  <%= @users_qualification.qualification_id %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @users_qualification.score %>
+</p>
+
+
+<%= link_to 'Edit', edit_users_qualification_path(@users_qualification) %> |
+<%= link_to 'Back', users_qualifications_path %>

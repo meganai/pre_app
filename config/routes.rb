@@ -1,15 +1,21 @@
 PreApp::Application.routes.draw do
+
+  get "users/index"
+
+  root :to => 'dashboards#index'
+
+  resources :users_qualifications
+
   resources :responses
 
-
   resources :articles
-
 
   resources :bbs
 
   resources :dashboards
 
   devise_for :users
+  resources :users
 
   resources :qualifications
 

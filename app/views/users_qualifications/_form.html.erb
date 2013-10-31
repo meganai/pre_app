@@ -1,0 +1,29 @@
+<%= form_for(@users_qualification) do |f| %>
+  <% if @users_qualification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@users_qualification.errors.count, "error") %> prohibited this users_qualification from being saved:</h2>
+
+      <ul>
+      <% @users_qualification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :qualification_id %><br />
+    <%= f.number_field :qualification_id %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.number_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

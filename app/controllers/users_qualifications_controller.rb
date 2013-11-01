@@ -3,7 +3,6 @@ class UsersQualificationsController < ApplicationController
   # GET /users_qualifications.json
   def index
     @users_qualifications = UsersQualification.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users_qualifications }
@@ -25,6 +24,7 @@ class UsersQualificationsController < ApplicationController
   # GET /users_qualifications/new.json
   def new
     @users_qualification = UsersQualification.new
+    @qualifications = Qualification.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +42,7 @@ class UsersQualificationsController < ApplicationController
   def create
     @users_qualification = UsersQualification.new(params[:users_qualification])
     @users_qualification.user_id = current_user.id
+    @users_qualification.qualification_id = params[:qualification_id]
 
     respond_to do |format|
       if @users_qualification.save

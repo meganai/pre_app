@@ -1,5 +1,12 @@
-<h1>DashBoard</h1>
+<h1>マイページ</h1>
 <%= link_to "add new qualification", new_users_qualification_path %>
 <br>
-<table class="table table-hover">
+<table class="table table-bordered">
+	<% current_user.users_qualifications.each do |users_qualification| %>
+	<tr>
+		<td><%= users_qualification.qualification.name %></td>
+        <td><%= link_to 'Edit', edit_users_qualification_path(users_qualification), :class => 'icon-pencil' %></td>
+        <td><%= link_to 'Destroy', users_qualification, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'icon-remove' %></td>
+	</tr>
+	<% end %>
 </table>

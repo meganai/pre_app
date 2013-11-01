@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
   has_many :responses
   has_many :articles
+  has_many :users_qualifications
 end

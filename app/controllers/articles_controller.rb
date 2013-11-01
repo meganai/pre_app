@@ -44,6 +44,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @article.user_id = current_user.id
+    @article.qualification_id = params[:qualification_id]
 
     respond_to do |format|
       if @article.save

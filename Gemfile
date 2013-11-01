@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem "twitter-bootstrap-rails"
+gem 'kaminari'
 
 # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'

@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @article.title %></h2>
-<p>
-  <b>名前:</b>
-  <%= @article.user.l_name %>
-</p>
+<div class="article"
+<!-- 親記事 -->
+<div class="article-parent">
+  <h2><%= @article.title %></h2>
+  <div class="article-header">
+    <%= @article.user.l_name %>
+    <%= @article.user.f_name %>
+    <%= @article.qualification.name %>
+  </div>
+  <div class="article-content">
+    <%= @article.content %>
+  </div>
+</div>
+<!-- /親記事 -->
 
-<p>
-  <b>資格:</b>
-  <%= @article.qualification_id %>
-</p>
-
-<p>
-  <%= @article.content %>
-</p>
-
+<!-- 記事に対するレスポンス -->
 <% @article.responses.each do |response| %>
-
+<div class="article-child">
   <h3><%= response.title %></h3>
   <%= response.user.l_name %>
   <%= response.user.f_name %>
   <%= response.content %>
+</div>
 <% end %>
+<!-- /記事に対するレスポンス -->
+</div>
 
 <%= render 'response' %>
 
@@ -29,3 +33,17 @@
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+<style type="text/css">
+.article {
+}
+.article-parent {
+}
+.article-child {
+}
+.article-header {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+</style>
